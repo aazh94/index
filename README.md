@@ -36,7 +36,7 @@ AND i.inventory_id = r.inventory_id;
 
 1. Улучшаем фильтрацию по дате, заменяя `DATE(p.payment_date)` на диапазон:
    
-   ```sql
+  ```sql
    WHERE p.payment_date >= '2005-07-30 00:00:00' 
    AND p.payment_date < '2005-07-31 00:00:00';
   ```
