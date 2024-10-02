@@ -69,7 +69,7 @@ WHERE
     p.payment_date >= '2005-07-30 00:00:00' 
     AND p.payment_date < '2005-07-31 00:00:00';
 
-
+#
 
 ![Оптимизированный запрос](index_task1_2.png)
 
