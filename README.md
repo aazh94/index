@@ -52,24 +52,24 @@ CREATE INDEX idx_film_id ON film(film_id);
 
 Оптимизированный запрос:
 
-SELECT DISTINCT 
+SELECT DISTINCT
     CONCAT(c.last_name, ' ', c.first_name) AS full_name, 
     SUM(p.amount) OVER (PARTITION BY c.customer_id, f.title) AS total_payment
-FROM 
+FROM
     payment p
-JOIN 
+JOIN
     rental r ON p.payment_date = r.rental_date
-JOIN 
+JOIN
     customer c ON r.customer_id = c.customer_id
-JOIN 
+JOIN
     inventory i ON r.inventory_id = i.inventory_id
-JOIN 
+JOIN
     film f ON i.film_id = f.film_id
-WHERE 
+WHERE
     p.payment_date >= '2005-07-30 00:00:00' 
     AND p.payment_date < '2005-07-31 00:00:00';
 
-#
+
 
 ![Оптимизированный запрос](index_task1_2.png)
 
